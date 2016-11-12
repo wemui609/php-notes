@@ -1,0 +1,15 @@
+nav{
+	background-color: black;
+	padding: 2px;
+}
+
+nav ul{
+	list-style: none;
+	color: lightgray;
+}
+
+nav ul li{
+	display: inline-block;
+	padding: 10px;
+	border:1px lightgray solid;
+}
