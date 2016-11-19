@@ -67,7 +67,7 @@ $email = trim($profile[1]);
 <h3>
 <span class="left">Name:&nbsp;</span>
 <!-- Call the 'name' Variable to display in this span-->
-<span class="right"><?pho echo $name ?></span>
+<span class="right"><?php echo $name ?></span>
 </h3>
 <h4>
 <span class="left">Email:&nbsp;</span>

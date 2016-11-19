@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 <head>
@@ -42,13 +41,9 @@
 	</style>
 </head>
 <body>
-<nav>
-	<ul>
-		<li><a href="index.php">HOME</a></li>
-		<li><a href="register.php">REGISTER</a></li>
-		<li><a href="lookup.php">LOOKUP</a></li>
-	</ul>
-</nav>	<h2>Lookup</h2>
+
+<?php require_once "nav.php"; ?>
+<h2>Lookup</h2>
 
 	<form method="post" action="lookup.php">
 		<label>UserName:<br>
@@ -59,16 +54,41 @@
 		<input type="submit" name="submit" value="Submit">  
 	</form>
 
+<?php
+
+if(isset($_POST['user'])) {
+
+	$user = $_POST['user'];
+	$imagedir = "$user/image.png";
+
+
+
+
+
+	$profile = file("$user/profile.txt");
+
+
+
+	$name = trim($profile[0]);
+	$email = trim($profile[1]);
+	} else{
+
+		$imagedir = "default.png";
+		$name = "name";
+		$email = "email";
+	}	
+	?>
 
 <div class="profilecontainer">
-	<img src="default.png">
+	
+	<img src="<?php echo $imagedir ?>">
 	<h3>
 		<span class="left">Name:&nbsp;</span>
-		<span class="right">name</span>
+		<span class="right"><?php echo $name ?></span>
 	</h3>
 	<h4>
 		<span class="left">Email:&nbsp;</span>
-		<span class="right">email</span>
+		<span class="right"><?php echo $email ?></span>
 	</h4>
 </div>
 
