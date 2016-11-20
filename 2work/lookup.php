@@ -59,19 +59,11 @@
 if(isset($_POST['user'])) {
 
 	$user = $_POST['user'];
-		$imagedir1 = "$user/image.png";
-		$imagedir2 = "$user/image.jpg";
+	$imagedir = "$user/image.png";
 
-if(file_exists($imagedir2)){
-$imagedir = $imagedir2;
-}elseif (file_exists($imagedir1)) {
-$imagedir = $imagedir1;
-}
 
-else{
 
-		$imagedir = "default.png";
-}
+
 
 	$profile = file("$user/profile.txt");
 
